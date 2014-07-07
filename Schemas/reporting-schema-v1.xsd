@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="Policy">
+		<complexType>
+			<sequence>
+				<element name="Name" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="Start" type="date" minOccurs="1" maxOccurs="1" />
+				<element name="End" type="dateTime" minOccurs="1" maxOccurs="1" />
+				<element name="Generated" type="dateTime"  minOccurs="1" maxOccurs="1" />
+				<element name="Student" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="RoleNo" type="string" minOccurs="1" maxOccurs="1" />
+							<element name="GivenName" type="string" minOccurs="1" maxOccurs="1" />
+							<element name="Surname" type="string" minOccurs="1" maxOccurs="1" />
+							<element name="Form" minOccurs="1" maxOccurs="1">
+								<complexType>
+									<sequence>
+										<element name="Group" minOccurs="1" maxOccurs="1">
+											<complexType>
+												<sequence>
+													<element name="Code" type="string" minOccurs="0" maxOccurs="1" />
+													<element name="Name" type="string" minOccurs="0" maxOccurs="1" />
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="Courses" minOccurs="0" maxOccurs="1">
+								<complexType>
+									<sequence>
+										<element name="Course" minOccurs="0" maxOccurs="unbounded">
+											<complexType>
+												<sequence>
+													<element name="Code" type="string" minOccurs="1" maxOccurs="1" />
+													<element name="Name" type="string" minOccurs="0" maxOccurs="1" />
+													<element name="Skills" minOccurs="0" maxOccurs="1">
+														<complexType>
+															<sequence>
+																<element name="Skill" minOccurs="0" maxOccurs="unbounded">
+																	<complexType>
+																		<sequence>
+																			<element name="Name" type="string" minOccurs="1" maxOccurs="1" />
+																			<element name="Value" type="decimal" minOccurs="1" maxOccurs="1" />
+																			<element name="Label" type="string" minOccurs="0" maxOccurs="1" />
+																			<element name="Previously" minOccurs="0" maxOccurs="1">
+																				<complexType>
+																					<sequence>
+																						<element name="Value" type="decimal" minOccurs="0" maxOccurs="unbounded" />
+																					</sequence>
+																				</complexType>
+																			</element>
+																			<element name="Bands" minOccurs="0" maxOccurs="1">
+																				<complexType>
+																					<sequence>
+																						<element name="Band" minOccurs="0" maxOccurs="unbounded">
+																							<complexType>
+																								<sequence>
+																									<element name="Value" type="decimal" minOccurs="1" maxOccurs="1" />
+																									<element name="Name" type="string" minOccurs="1" maxOccurs="1" />
+																								</sequence>
+																							</complexType>
+																						</element>
+																					</sequence>
+																				</complexType>
+																			</element>
+																			<element name="Background" minOccurs="0" maxOccurs="1">
+																				<complexType>
+																					<sequence>
+																						<element name="Name" type="string" minOccurs="0" maxOccurs="1" />
+																						<element name="Value" type="decimal" minOccurs="0" maxOccurs="1" />
+																						<element name="Width" type="decimal" minOccurs="0" maxOccurs="1" />
+																					</sequence>
+																				</complexType>
+																			</element>
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+													<element name="Comments" minOccurs="0" maxOccurs="1">
+														<complexType>
+															<sequence>
+																<element name="Comment" minOccurs="0" maxOccurs="unbounded">
+																	<complexType>
+																		<sequence>
+																			<element name="Staff" minOccurs="1" maxOccurs="1">
+																				<complexType>
+																					<sequence>
+																						<element name="Code" type="string" minOccurs="0" maxOccurs="1" />
+																						<element name="Name" type="string" minOccurs="1" maxOccurs="1" />
+																					</sequence>
+																				</complexType>
+																			</element>
+																			<element name="Type" type="string" minOccurs="1" maxOccurs="1" />
+																			<element name="Value" type="string" minOccurs="1" maxOccurs="1" />
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+													<element name="Results" minOccurs="0" maxOccurs="1">
+														<complexType>
+															<sequence>
+																<element name="Result" minOccurs="0" maxOccurs="unbounded">
+																	<complexType>
+																		<sequence>
+																			<element name="Date" type="date" minOccurs="1" maxOccurs="1" />
+																			<element name="Type" type="string" minOccurs="1" maxOccurs="1" />
+																			<element name="Value" type="string" minOccurs="1" maxOccurs="1" />
+																			<element name="Text" type="string" minOccurs="0" maxOccurs="1" />
+																			<element name="Public" type="boolean" minOccurs="1" maxOccurs="1" />
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

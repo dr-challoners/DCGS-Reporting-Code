@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Policy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string" minOccurs="0" />
+        <xs:element name="Start" type="xs:string" minOccurs="0" />
+        <xs:element name="End" type="xs:string" minOccurs="0" />
+        <xs:element name="Generated" type="xs:string" minOccurs="0" />
+        <xs:element name="Student" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoleNo" type="xs:string" minOccurs="0" />
+              <xs:element name="GivenName" type="xs:string" minOccurs="0" />
+              <xs:element name="Surname" type="xs:string" minOccurs="0" />
+              <xs:element name="Form" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Code" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Courses" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Course" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Code" type="xs:string" minOccurs="0" />
+                          <xs:element name="Name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Comments" type="xs:string" minOccurs="0" />
+                          <xs:element name="Results" type="xs:string" minOccurs="0" />
+                          <xs:element name="Skills" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Skill" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Name" type="xs:string" minOccurs="0" />
+                                      <xs:element name="Value" type="xs:string" minOccurs="0" />
+                                      <xs:element name="Label" type="xs:string" minOccurs="0" />
+                                      <xs:element name="Bands" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Band" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Value" type="xs:string" minOccurs="0" />
+                                                  <xs:element name="Name" type="xs:string" minOccurs="0" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Background" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Name" type="xs:string" minOccurs="0" />
+                                            <xs:element name="Value" type="xs:string" minOccurs="0" />
+                                            <xs:element name="Width" type="xs:string" minOccurs="0" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Policy" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

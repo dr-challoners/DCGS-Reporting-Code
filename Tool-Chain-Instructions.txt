@@ -1,0 +1,63 @@
+Reporting Instruction Tool-Chain
+--------------------------------
+
+PREREQUISITES:
+- Ensure JRE is installed and BIN directory is included in PATH Variable for Host Computer
+
+-- Stage 1 -----------------------------------------
+Generate the XML Report Data Files Using Leviathan
+
+:Command
+quintilian-generate generate-xml <ACADEMIC YEARS> c:\Visualisation-Templates\Sources /t /d
+
+<ACADEMIC YEARS> = Academic Years you want to Generate for (e.g. 7;9;11)
+<OUTPUT DIR> = Base Directory to Generate too (Folders for Policy Name/Group Name will then be created)
+----------------------------------------------------
+
+
+-- Stage 2 -----------------------------------------
+Generate the PDFs Outputs from the XML Data Files (Using XSL/FOP & PDF Toolkit)
+
+:Command
+Generate-Report-PDFs.bat <GROUP DIRECTORY> <XSL TEMPLATE> <OUTPUT SUFFIX>
+
+<GROUP DIRECTORY> = Directory Containing the Group XML Files
+<XSL TEMPLATE> = XSL Template to use to Generate the FO Files (e.g. sliders-bw.xsl)
+<OUTPUT SUFFIX> = Output Suffix for Files (e.g. BW)
+
+-- IMPORTANT --
+Current Working Directory must contain the XSL Template or all references in the XSL must be absolute (normally relative).
+
+-- NOTES --
+A further File (Printable-<SUFFIX>.pdf will be created in the directory with all the files bound together for Printing.
+----------------------------------------------------
+
+
+-- Optional ----------------------------------------
+Run a PDF Generation for an individual file
+
+:Command
+fop-1.0-bin\fop-1.0\fop -xml <XML SOURCE> -xsl <XSL SOURCE> -pdf <OUTPUT FILE>
+
+<XML SOURCE> Relative/Absolute Path to XML Data Source File (e.g. Sources\12-1RG.xml)
+<XSL TEMPLATE> = XSL Template to use to Generate the FO Files (e.g. sliders-bw.xsl)
+<OUTPUT FILE> = Relative/Absolute Path to PDF Output (e.g. Outputs\12-1RG.pdf)
+
+-- IMPORTANT --
+Current Working Directory must contain the XSL Template or all references in the XSL must be absolute (normally relative).
+----------------------------------------------------
+
+
+-- Optional ----------------------------------------
+Run an XSLT Transformation to Generate an XSL-FO File
+
+:Command
+saxonb9-1-0-8n\bin\Transform <XML SOURCE> <XSL SOURCE> ><FO OUTPUT FILE>
+
+<XML SOURCE> Relative/Absolute Path to XML Data Source File (e.g. Sources\12-1RG.xml)
+<XSL TEMPLATE> = XSL Template to use to Generate the FO Files (e.g. sliders-bw.xsl)
+<FO OUTPUT FILE> = Relative/Absolute Path to FO Output
+
+-- IMPORTANT --
+Current Working Directory must contain the XSL Template or all references in the XSL must be absolute (normally relative).
+----------------------------------------------------
